@@ -1,0 +1,28 @@
+2025-03-09 10:51:22 MSK СООБЩЕНИЕ:  система БД была выключена: 2025-03-09 10:51:18 MSK
+2025-03-09 10:56:22 MSK СООБЩЕНИЕ:  начата контрольная точка: time
+2025-03-09 10:57:27 MSK СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 600 (3.7%); добавлено файлов WAL 0, удалено: 0, переработано: 1; запись=64.270 сек., синхр.=0.023 сек., всего=64.321 сек.; синхронизировано_файлов=21, самая_долгая_синхр.=0.006 сек., средняя=0.002 сек.; расстояние=5345 kB, ожидалось=5345 kB; lsn=0/4389A18, lsn redo=0/4389988
+2025-03-09 11:00:17 MSK РћРЁРР‘РљРђ:  РѕС‚РЅРѕС€РµРЅРёРµ "grader_attempts" СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+2025-03-09 11:00:17 MSK РћРџР•Р РђРўРћР :  CREATE TABLE grader_attempts (
+	    id SERIAL PRIMARY KEY,
+	    user_id TEXT,
+	    oauth_consumer_key TEXT,
+	    lis_result_sourcedid TEXT,
+	    lis_outcome_service_url TEXT,
+	    is_correct BOOLEAN,
+	    attempt_type TEXT,
+	    created_at TIMESTAMP
+	)
+2025-03-09 11:01:00 MSK РћРЁРР‘РљРђ:  СЃС‚РѕР»Р±РµС† "is_correct" РёРјРµРµС‚ С‚РёРї boolean, Р° РІС‹СЂР°Р¶РµРЅРёРµ - integer (СЃРёРјРІРѕР» 532)
+2025-03-09 11:01:00 MSK РџРћР”РЎРљРђР—РљРђ:  РџРµСЂРµРїРёС€РёС‚Рµ РІС‹СЂР°Р¶РµРЅРёРµ РёР»Рё РїСЂРµРѕР±СЂР°Р·СѓР№С‚Рµ РµРіРѕ С‚РёРї.
+2025-03-09 11:01:00 MSK РћРџР•Р РђРўРћР :  
+	INSERT INTO grader_attempts (
+	    user_id, oauth_consumer_key, lis_result_sourcedid, lis_outcome_service_url, 
+	    is_correct, attempt_type, created_at
+	) VALUES ('7e286e46c64e96477e776bea316c0c8c', '', 'course-v1:SkillFactory+SDA-3.0+FEB2021:lms.skillfactory.ru-ba69a652ec204848be25e4f74138ae7e:7e286e46c64e96477e776bea316c0c8c', 'https://lms.skillfactory.ru/courses/course-v1:SkillFactory+SDA-3.0+FEB2021/xblock/block-v1:SkillFactory+SDA-3.0+FEB2021+type@lti+block@ba69a652ec204848be25e4f74138ae7e/handler_noauth/grade_handler', 1, 'submit', '2023-04-01 12:47:07.884702')
+	
+2025-03-09 11:01:22 MSK СООБЩЕНИЕ:  начата контрольная точка: time
+2025-03-09 11:01:59 MSK СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 89 (0.5%); добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=37.166 сек., синхр.=0.020 сек., всего=37.200 сек.; синхронизировано_файлов=19, самая_долгая_синхр.=0.006 сек., средняя=0.002 сек.; расстояние=3087 kB, ожидалось=5119 kB; lsn=0/4739F60, lsn redo=0/468D648
+2025-03-09 11:03:17 MSK РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "run") (СЃРёРјРІРѕР» 62)
+2025-03-09 11:03:17 MSK РћРџР•Р РђРўРћР :  select *
+	from grader_attempts ga 
+	where ga.attempt_type is run
